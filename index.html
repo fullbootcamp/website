@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fullbootcamp Login Page</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <div class="grid-container">
@@ -21,8 +22,8 @@
     </div>
     <div class="item2">
       <aside>
-        <h1>Fullbootcamp</h1>
-        <h3>Become a Web Front End Developer<br>in 2024!</h3>
+        <h1 class="logo">Fullbootcamp</h1>
+        <h3 class="slogan">Become a Web Front End Developer<br><span>in 2024!</span></h3>
       </aside>
     </div>
     <div class="item3">
@@ -32,13 +33,15 @@
           <input type="text" name="name">
           <label for="password">Password</label>
           <input type="password" name="password">
-          <input type="button" name="submit">
+          <input id="login" type="submit" value="Login">
         </form>
       </main>
     </div>
     <div class="item4"></div>
     <div class="item5">
-      <footer>Copyright Fullbootcamp 2024</footer>
+      <footer class="text-footer"><p>
+        Copyright Fullbootcamp 2024
+      </p></footer>
     </div>
   </div>
   

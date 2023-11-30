@@ -90,21 +90,43 @@ require_once('config.php');
     </div>
     <div class="item3">
       <main>
-        <form action="register.php" method="post">
+      <form class="form-signin" action="register.php" method="post">
+      <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+      <h1 class="h3 mb-3 font-weight-normal">Register for FREE</h1>
+      
+      <input type="text"  name="lastname" class="form-control" placeholder="First Name" required autofocus><br>
+      
+      <input type="text"  name="firstname" class="form-control" placeholder="Last Name" required autofocus><br>
+    
+      <input type="email"  name="email" class="form-control" placeholder="Email address" required autofocus><br>
+      
+      <input type="password" name="password" class="form-control" placeholder="Password" required><br>
+      <input type="password" name="repeat_password" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Please agree to the terms and conditions***
+        </label>
+      </div>
+      <input class="btn btn-lg btn-success btn-block" type="submit" name="create" value="Create FREE Account">
+      
+    </form>
+        <!-- <form action="register.php" method="post">
           <input class="fields" type="text" name="firstname" placeholder="First Name" required><br>
           <input class="fields" type="text" name="lastname" placeholder="Last Name" required><br>
           <input class="fields" type="email" name="email" placeholder="Email" required><br>
           <input class="fields" type="password" name="password" placeholder="Password"  required><br>
           <input class="fields" type="password" name="repeat_password" placeholder="Password"  required><br>
           <input id="signup" type="submit" name="create" value="Register Now">
-        </form>
-        <a href="#forgotpwd">Already a member?</a>
+        </form> -->
+        <a href="login.php">Already a member?</a>
       </main>
     </div>
     <div class="item4"></div>
     <div class="item5">
-      <footer class="text-footer"><p>
-        Copyright Fullbootcamp 2024
+      <footer class="text-footer">
+      <p class="mt-5 mb-3 text-danger">&copy; Copyright Fullbootcamp 2023-2024</p>
+      <p>
+        
       </p></footer>
     </div>
   </div>

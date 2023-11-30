@@ -24,7 +24,11 @@ require_once('config.php');
     $email      = $_POST['email'];
     $password   = $_POST['password'];
     $repeatPassword   = $_POST['repeat_password'];
+
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
     $errors = array();
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       array_push($errors, "Email is not valid! Please enter valid email.");
     }
@@ -34,13 +38,28 @@ require_once('config.php');
     if ($password !== $repeatPassword) {
       array_push($errors, "Password does not match");
     }
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+    $rowCount = mysqli_num_rows($result);
+    if ($rowCount > 0) {
+      array_push($errors, "Email already in our database!");
+    }
     if (count($errors) > 0) {
       foreach ($errors as $error) {
         echo "<div class='alert alert-danger'>$error</div>";
       } 
 
     } else {
-      echo $firstName . " " . $lastName . " " . $email;
+      $sql = "INSERT INTO users(firstname,lastname, email, password ) VALUES (?, ?, ?, ? )";
+      $stmt = mysqli_stmt_init($conn);
+      $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+      if ($prepareStmt) {
+        mysqli_stmt_bind_param($stmt, "ssss", $firstName, $lastName, $email, $passwordHash);
+        mysqli_stmt_execute($stmt);
+        echo "<div class='alert alert-success'>Thank you for registering! Please confirm your email!</div>";
+      }else {
+        die("Something went wrong");
+      }
 
     }
   

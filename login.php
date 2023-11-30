@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+ 
   <div class="grid-container">
     <div class="item1">
       <header>
@@ -28,7 +29,7 @@
     </div>
     <div class="item3">
       <main>
-        <form action="">
+        <form action="login.php" method="POST">
           <label for="email">Email</label>
           <input type="email" name="email">
           <label for="password">Password</label>

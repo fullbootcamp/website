@@ -17,7 +17,11 @@ html {
   font-size: 2rem;
   color:antiquewhite
 }
-
+.loginButton {
+  float: right;
+  text-decoration: none;
+  color: antiquewhite;
+}
 #login {
   background-color: #B31312;
   color:antiquewhite;
@@ -35,6 +39,11 @@ html {
   display: grid;
   gap: 40px;
 }
+ .item1 {
+  grid-column-start: 4;
+  grid-column-end:12;
+
+ }
 .item2 {
   grid-column-start: 2;
   grid-column-end: 4;
@@ -62,6 +71,42 @@ html {
   
   
 }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .item2 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 6;
+  }
+
+  .item3 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 8;
+    /* background-color: #FF8F8F; */
+    background-color: #EA906C;
+    border-radius: 0.5rem;
+    padding: 20px;
+    box-shadow: 5px 5px 8px 3px antiquewhite;
+    justify-self: center;
+    
+  }
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}
+  .item5 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 8;
+    grid-row-end: 12;
+    
+    
+  }
+}
+
 .signup {
   background-color: #8ADAB2;
   color: #000;

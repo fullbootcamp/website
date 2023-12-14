@@ -32,7 +32,7 @@ require_once('config.php');
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       array_push($errors, "Email is not valid! Please enter valid email.");
     }
-    if (strlen($password) < 8) {
+    if (strlen($password) < 6) {
       array_push($errors, "Password must be at least 8 characters long.");
     }
     if ($password !== $repeatPassword) {
@@ -72,14 +72,29 @@ require_once('config.php');
   <div class="grid-container">
     <div class="item1">
       <header>
-        <ul>
+      <div class="container">
+  <div class="row">
+  <div class="col-sm m-3">
+</div>
+    <div class="col-sm m-3">
+    
+    </div>
+    <div class="col-sm m-3">
+    <button class="btn btn-outline-success"><a href="login.php" class="loginButton">Login</a></button>
+    </div>
+  </div>
+</div>
+
+        
+       
+        <!-- <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#courses">Courses</a></li>
           <li><a href="#ebooks">eBooks</a></li>
           <li><a href="#vlogs">Vlogs</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#routine">Routines</a></li>
-        </ul>
+        </ul> -->
       </header>
     </div>
     <div class="item2">
@@ -92,7 +107,7 @@ require_once('config.php');
       <main>
       <form class="form-signin" action="register.php" method="post">
       <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-      <h1 class="h3 mb-3 font-weight-normal">Register for FREE</h1>
+      <h1 class="h3 mb-3 font-weight-normal text-success">Register for FREE</h1>
       
       <input type="text"  name="lastname" class="form-control" placeholder="First Name" required autofocus><br>
       
@@ -104,7 +119,7 @@ require_once('config.php');
       <input type="password" name="repeat_password" class="form-control" placeholder="Password" required>
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me"> Please agree to the terms and conditions***
+          <input type="checkbox" value="remember-me"> I have read the terms and conditions***
         </label>
       </div>
       <input class="btn btn-lg btn-success btn-block" type="submit" name="create" value="Create FREE Account">

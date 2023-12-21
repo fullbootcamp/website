@@ -1,3 +1,9 @@
+<?php session_start();
+if (isset($_SESSION["user"])) {
+  header("Location: dashboard.php");
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +92,10 @@
       <input type="password" name="password" class="form-control text-info" id="floatingPassword" placeholder="Password">
      
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit" value="Sign-in" name="sign-in">Sign in</button>
+    <button class="btn btn-primary w-100 py-2" type="submit" value="Sign-in" name="sign-in">Sign in</button><br><br>
+    <div>
+      <p>Not registered yet? <a href="register.php">Sign up for FREE!</a></p>
+    </div>
   
   </form>
       </main>
